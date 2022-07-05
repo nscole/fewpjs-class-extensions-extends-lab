@@ -22,3 +22,18 @@ class Triangle extends Polygon {
             return (this.sides[0] + this.sides[1]) > this.sides[2] && (this.sides[1] + this.sides[2]) > this.sides[0];
     }
 };
+
+class Square extends Polygon{
+    get isValid(){
+        return (this.sides[0] == this.sides[1] && this.sides[1] == this.sides[2] && this.sides[2] == this.sides[3]);
+    }
+    get perimeter(){
+           let sum = 0;
+           for (const side of this.sides){
+               sum += side;
+           } return sum;
+    }
+    get area(){
+        return this.sides[0] * this.sides[1];
+    }
+}
